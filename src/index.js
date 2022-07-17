@@ -10,8 +10,4 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 reportWebVitals();
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+root.render(<App />);

@@ -42,14 +42,7 @@ class Movies extends Component {
       );
     const movies = paginate(allMovies, currentPage, pageSize);
     return (
-      <React.Fragment
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          alignContent: "center",
-          alignSelf: "center",
-        }}
-      >
+      <React.Fragment>
         <p style={{ textAlign: "center", fontSize: 22, fontWeight: "bold" }}>
           Showing {count} movies in the database.
         </p>
