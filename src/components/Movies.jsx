@@ -2,9 +2,14 @@ import { toHaveFocus } from "@testing-library/jest-dom/dist/matchers";
 import React, { Component } from "react";
 import { getMovies, deleteMovie } from "../services/fakeMovieService";
 import Like from "./Like";
+import Pagination from "./pagination";
+import { paginate } from "../utils/paginate";
+
 class Movies extends Component {
   state = {
     movies: getMovies(),
+    pageSize: 4,
+    currentPage: 1,
   };
 
   handleDelete = (movie) => {
@@ -20,16 +25,43 @@ class Movies extends Component {
     this.setState({ movies });
   };
 
-  renderMovies() {
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
+  };
+  render() {
     // refactoring
     const { length: count } = this.state.movies;
+    const { pageSize, currentPage, movies: allMovies } = this.state;
 
-    return count !== 0 ? (
-      <React.Fragment>
-        <p style={{ fontSize: 22, fontWeight: "bold" }}>
+    if (count === 0)
+      return (
+        <p style={{ textAlign: "center", fontSize: 22, fontWeight: "bold" }}>
+          {" "}
+          There are no movies in the database.{" "}
+        </p>
+      );
+    const movies = paginate(allMovies, currentPage, pageSize);
+    return (
+      <React.Fragment
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <p style={{ textAlign: "center", fontSize: 22, fontWeight: "bold" }}>
           Showing {count} movies in the database.
         </p>
-        <table className="table table-dark table-hover table-striped">
+        <table
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "center",
+            alignSelf: "center",
+          }}
+          className="table table-dark table-hover table-striped"
+        >
           <thead>
             <tr>
               <th>Title</th>
@@ -41,7 +73,7 @@ class Movies extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.movies.map((movie) => (
+            {movies.map((movie) => (
               <tr key={movie._id}>
                 <td>{movie.title}</td>
                 <td>{movie.genre.name}</td>
@@ -56,7 +88,7 @@ class Movies extends Component {
                 <td>
                   <button
                     onClick={() => this.handleDelete(movie)}
-                    className="btn btn-outline-warning btn-sm"
+                    className="btn btn-outline-danger btn-sm"
                     style={{ fontWeight: "bold" }}
                   >
                     Delete
@@ -66,16 +98,14 @@ class Movies extends Component {
             ))}
           </tbody>
         </table>
+        <Pagination
+          itemsCount={count}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={this.handlePageChange}
+        />
       </React.Fragment>
-    ) : (
-      <p style={{ fontSize: 22, fontWeight: "bold" }}>
-        There are no movies in the database.
-      </p>
     );
-  }
-
-  render() {
-    return <React.Fragment>{this.renderMovies()}</React.Fragment>;
   }
 }
 
