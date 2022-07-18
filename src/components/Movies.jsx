@@ -74,7 +74,7 @@ class Movies extends Component {
     const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
     const movies = paginate(sorted, currentPage, pageSize);
     return (
-      <div className="col">
+      <div className="row">
         <div className="col-lg-3 col-md-3 col-sm-3">
           <ListGroup
             selectedItem={this.state.selectedGenre}
