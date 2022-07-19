@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const ListGroup = ({
   items,
@@ -15,8 +15,8 @@ const ListGroup = ({
           onClick={() => onItemSelect(item)}
           className={
             item === selectedItem
-              ? "clickable list-group-item list-group-item-action list-group-item-danger active"
-              : "clickable list-group-item list-group-item-action list-group-item-danger"
+              ? "clickable list-group-item list-group-item-action list-group-item-light active"
+              : "clickable list-group-item list-group-item-action list-group-item-light"
           }
         >
           {item[textProperty]}
