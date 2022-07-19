@@ -13,10 +13,21 @@ code {
     monospace;
 }
 
-.pagination a{
-background-color: #dc3545
+.page-item a{
+background-color: white
 
 }
+
+.page-item a:hover{
+  background-color: #dc3545
+  
+}
+
+.page-item >.active>a{
+  background-color: #dc3545 !important
+  
+}
+
 .navbar{
   margin-bottom: 30px;
 }
