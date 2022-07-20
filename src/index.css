@@ -13,25 +13,27 @@ code {
     monospace;
 }
 
-.page-item a{
-background-color: white
-
-}
+ .active .page-link {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+  }
 
 .page-item a:hover{
   background-color: #dc3545;
-  color: white
+  color: white !important
   
 }
 
-.list-group li:hover{
-  background-color: #dc3545
-
+.list-group-item.active {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border-color: #dc3545 !important;
 }
 
 .list-group li:hover{
   background-color: #dc3545;
-  color: white
+  color: white;
+
 }
 
 .navbar{
