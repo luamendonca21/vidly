@@ -74,7 +74,7 @@ class Movies extends Component {
 
     if (count === 0)
       return (
-        <p style={{ textAlign: "center", fontSize: 22, fontWeight: "bold" }}>
+        <p style={{ textAlign: "center", fontSize: 22, fontWeight: 600 }}>
           {" "}
           There are no movies in the database.{" "}
         </p>
@@ -92,7 +92,7 @@ class Movies extends Component {
         </div>
 
         <div className="col">
-          <p style={{ textAlign: "center", fontSize: 22, fontWeight: "bold" }}>
+          <p style={{ textAlign: "center", fontSize: 22, fontWeight: 600 }}>
             Showing {totalCount} movies in the database.
           </p>
           <MoviesTable
