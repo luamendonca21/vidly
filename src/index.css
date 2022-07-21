@@ -16,6 +16,7 @@ code {
  .active .page-link {
     background-color: #dc3545 !important;
     border-color: #dc3545 !important;
+    color: white !important;
   }
 
 .page-item a:hover{
@@ -28,6 +29,10 @@ code {
   background-color: #dc3545 !important;
   color: white !important;
   border-color: #dc3545 !important;
+}
+
+.page-link{
+  color: #495057 !important;
 }
 
 .list-group li:hover{
