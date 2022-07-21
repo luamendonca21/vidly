@@ -88,8 +88,8 @@ class Movies extends Component {
       );
     const { totalCount, data: movies } = this.getPageData();
     return (
-      <div className="row">
-        <div className="col-lg-3 col-md-3 col-sm-3">
+      <div className="row align-items-center">
+        <div className="col-12">
           <ListGroup
             selectedItem={this.state.selectedGenre}
             items={this.state.genres}
@@ -98,7 +98,7 @@ class Movies extends Component {
           />
         </div>
 
-        <div className="col">
+        <div style={{ margin: 20 }} className="col align-self-center">
           <p
             style={{
               color: "#495057",
