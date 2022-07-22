@@ -98,7 +98,10 @@ class Movies extends Component {
           />
         </div>
 
-        <div style={{ margin: 20 }} className="col align-self-center">
+        <div
+          style={{ margin: 20, overflow: "hidden" }}
+          className="col align-self-center"
+        >
           <p
             style={{
               color: "#495057",

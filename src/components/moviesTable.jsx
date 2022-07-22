@@ -39,12 +39,14 @@ class MoviesTable extends Component {
     const { movies, sortColumn, onSort } = this.props;
 
     return (
-      <Table
-        columns={this.columns}
-        data={movies}
-        sortColumn={sortColumn}
-        onSort={onSort}
-      />
+      <div className="table-responsive">
+        <Table
+          columns={this.columns}
+          data={movies}
+          sortColumn={sortColumn}
+          onSort={onSort}
+        />
+      </div>
     );
   }
 }
