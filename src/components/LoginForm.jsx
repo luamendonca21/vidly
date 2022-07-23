@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Input from "./input";
 
 class LoginForm extends Component {
   state = {
-    account: { password: "" },
+    account: { username: "", password: "" },
   };
 
   handleSubmit = (e) => {
@@ -24,42 +25,18 @@ class LoginForm extends Component {
           className="col"
           style={{ marginTop: 30 }}
         >
-          <div className=" col form-group">
-            <label
-              htmlFor="username"
-              style={{ fontWeight: "bold", color: "#495057" }}
-            >
-              Username
-            </label>
-            <input
-              name="username"
-              autoFocus
-              value={username}
-              onChange={this.handleChange}
-              id="username"
-              type="text"
-              className="form-control"
-              placeholder="Enter your username"
-            />
-          </div>
-
-          <div className="col form-group ">
-            <label
-              htmlFor="password"
-              style={{ fontWeight: "bold", color: "#495057" }}
-            >
-              Password
-            </label>
-            <input
-              name="password"
-              onChange={this.handleChange}
-              value={password}
-              id="password"
-              type="password"
-              className="form-control"
-              placeholder="Enter your password"
-            />
-          </div>
+          <Input
+            onChange={this.handleChange}
+            value={username}
+            label="Username"
+            name="username"
+          />
+          <Input
+            onChange={this.handleChange}
+            value={password}
+            label="Password"
+            name="password"
+          />
           <div
             className="col"
             style={{ marginTop: 30, display: "flex", justifyContent: "center" }}
