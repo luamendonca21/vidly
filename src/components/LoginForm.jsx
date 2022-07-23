@@ -43,32 +43,43 @@ class LoginForm extends Component {
     return (
       <div>
         <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
-        <form
-          onSubmit={this.handleSubmit}
-          className="col"
-          style={{ marginTop: 30 }}
-        >
-          <Input
-            error={errors.username}
-            onChange={this.handleChange}
-            value={username}
-            label="Username"
-            name="username"
-          />
-          <Input
-            error={errors.password}
-            onChange={this.handleChange}
-            value={password}
-            label="Password"
-            name="password"
-          />
-          <div
+        <div>
+          <form
+            onSubmit={this.handleSubmit}
             className="col"
-            style={{ marginTop: 30, display: "flex", justifyContent: "center" }}
+            style={{ marginTop: 30 }}
           >
-            <button className=" btn btn-danger btn-lg">Login</button>
-          </div>
-        </form>
+            <Input
+              error={errors.username}
+              onChange={this.handleChange}
+              value={username}
+              label="Username"
+              name="username"
+            />
+            <Input
+              error={errors.password}
+              onChange={this.handleChange}
+              value={password}
+              label="Password"
+              name="password"
+            />
+            <div
+              className="col"
+              style={{
+                marginTop: 40,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <button
+                style={{ borderRadius: 30 }}
+                className=" btn btn-danger btn-lg"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

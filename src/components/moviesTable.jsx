@@ -27,8 +27,13 @@ class MoviesTable extends Component {
       content: (movie) => (
         <button
           onClick={() => this.props.onDelete(movie)}
+          style={{
+            padding: "0.5rem 1.5em",
+
+            borderRadius: 30,
+            fontWeight: "bold",
+          }}
           className="btn btn-danger btn-sm"
-          style={{ fontWeight: "bold" }}
         >
           Delete
         </button>

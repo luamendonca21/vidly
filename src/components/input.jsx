@@ -4,10 +4,14 @@ const Input = ({ name, label, value, error, onChange }) => {
   let type = name == "username" ? "text" : "password";
   return (
     <div className=" col form-group">
-      <label htmlFor={name} style={{ fontWeight: "bold", color: "#495057" }}>
+      <label
+        htmlFor={name}
+        style={{ marginLeft: "20%", fontWeight: "bold", color: "#495057" }}
+      >
         {label}
       </label>
       <input
+        style={{ borderRadius: 20 }}
         name={name}
         autoFocus
         value={value}
@@ -17,7 +21,11 @@ const Input = ({ name, label, value, error, onChange }) => {
         className="form-control"
         placeholder={`Enter your ${name}`}
       />
-      {error && <div className="alert alert-danger">{error}</div>}
+      {error && (
+        <div style={{ marginTop: 5 }} className="alert alert-danger">
+          {error}
+        </div>
+      )}
     </div>
   );
 };
