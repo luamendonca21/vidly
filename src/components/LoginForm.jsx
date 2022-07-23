@@ -15,6 +15,7 @@ class LoginForm extends Component {
     this.setState({ account });
   };
   render() {
+    const { username, password } = this.state.account;
     return (
       <div>
         <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
@@ -33,7 +34,7 @@ class LoginForm extends Component {
             <input
               name="username"
               autoFocus
-              value={this.state.account.username}
+              value={username}
               onChange={this.handleChange}
               id="username"
               type="text"
@@ -52,7 +53,7 @@ class LoginForm extends Component {
             <input
               name="password"
               onChange={this.handleChange}
-              value={this.state.account.password}
+              value={password}
               id="password"
               type="password"
               className="form-control"
