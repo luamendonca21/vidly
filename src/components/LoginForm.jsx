@@ -84,6 +84,7 @@ class LoginForm extends Component {
               }}
             >
               <button
+                disabled={this.validate()}
                 style={{ borderRadius: 30 }}
                 className=" btn btn-danger btn-lg"
               >
