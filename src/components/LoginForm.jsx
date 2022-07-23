@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
+  username = React.createRef();
+  password = React.createRef();
+
   handleSubmit = (e) => {
     e.preventDefault();
+
     // Call the server
-    console.log("Sumbitted");
+    const username = this.username.current.value;
+    console.log(username);
+
+    const password = this.password.current.value;
+    console.log(password);
   };
   render() {
     return (
@@ -23,6 +31,8 @@ class LoginForm extends Component {
               Username
             </label>
             <input
+              autoFocus
+              ref={this.username}
               id="username"
               type="text"
               className="form-control"
@@ -38,6 +48,7 @@ class LoginForm extends Component {
               Password
             </label>
             <input
+              ref={this.password}
               id="password"
               type="password"
               className="form-control"
