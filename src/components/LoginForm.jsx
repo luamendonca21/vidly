@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
-  state = {};
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // Call the server
+    console.log("Sumbitted");
+  };
   render() {
     return (
       <div>
         <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
-        <form className="col" style={{ marginTop: 30 }}>
+        <form
+          onSubmit={this.handleSubmit}
+          className="col"
+          style={{ marginTop: 30 }}
+        >
           <div className=" col form-group">
             <label
               htmlFor="username"
