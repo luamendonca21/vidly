@@ -31,7 +31,7 @@ class LoginForm extends Component {
             </label>
             <input
               id="password"
-              type="text"
+              type="password"
               className="form-control"
               placeholder="Enter your password"
             />
