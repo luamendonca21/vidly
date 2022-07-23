@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class LoginForm extends Component {
   state = {
-    account: { username: "", password: "" },
+    account: { password: "" },
   };
 
   handleSubmit = (e) => {
@@ -52,7 +52,7 @@ class LoginForm extends Component {
             <input
               name="password"
               onChange={this.handleChange}
-              ref={this.password}
+              value={this.state.account.password}
               id="password"
               type="password"
               className="form-control"
