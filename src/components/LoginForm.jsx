@@ -22,7 +22,7 @@ class LoginForm extends Component {
             />
           </div>
 
-          <div className="col form-group">
+          <div className="col form-group ">
             <label
               htmlFor="password"
               style={{ fontWeight: "bold", color: "#495057" }}
@@ -36,8 +36,11 @@ class LoginForm extends Component {
               placeholder="Enter your password"
             />
           </div>
-          <div className="col" style={{ marginTop: 30 }}>
-            <button className=" col-12 btn btn-danger btn-lg">Login</button>
+          <div
+            className="col"
+            style={{ marginTop: 30, display: "flex", justifyContent: "center" }}
+          >
+            <button className=" btn btn-danger btn-lg">Login</button>
           </div>
         </form>
       </div>
