@@ -16,9 +16,13 @@ code {
   color: #7841f0 !important;
 }
 
-
-
-
+.nav-link.active{
+  color: #495057 !important;
+  font-weight: 500;
+}
+.nav-link:hover{
+  color: #495057 !important;
+}
  .active .page-link {
     background-color: #7841f0 !important;
     border-color: #7841f0 !important;
