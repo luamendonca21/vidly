@@ -12,7 +12,7 @@ const MovieForm = ({ match, history }) => {
           borderRadius: 30,
           fontWeight: "bold",
         }}
-        className="btn btn-danger btn-sm"
+        className="btn btn-danger btn-md"
       >
         Save
       </button>
