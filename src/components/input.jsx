@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ name, label, value, onChange }) => {
+const Input = ({ name, label, value, error, onChange }) => {
   let type = name == "username" ? "text" : "password";
   return (
     <div className=" col form-group">
@@ -17,6 +17,7 @@ const Input = ({ name, label, value, onChange }) => {
         className="form-control"
         placeholder={`Enter your ${name}`}
       />
+      {error && <div className="alert alert-danger">{error}</div>}
     </div>
   );
 };
