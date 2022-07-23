@@ -15,13 +15,13 @@ code {
   font-weight: bold;
 }
  .active .page-link {
-    background-color: #dc3545 !important;
-    border-color: #dc3545 !important;
+    background-color: #3425db !important;
+    border-color: #3425db !important;
     color: white !important;
   }
 
 .page-item a:hover{
-  background-color: #dc3545;
+  background-color: #3425db;
   color: white !important
   
 }
@@ -30,9 +30,9 @@ code {
   font-weight: bold;
 }
 .list-group-item.active {
-  background-color: #dc3545 !important;
+  background-color: #3425db !important;
   color: white !important;
-  border-color: #dc3545 !important;
+  border-color: #3425db !important;
 }
 
 .page-link{
@@ -40,7 +40,7 @@ code {
 }
 
 .list-group li:hover{
-  background-color: #dc3545;
+  background-color: #3425db;
   color: white;
 
 }
@@ -50,4 +50,10 @@ code {
 }
 .clickable{
   cursor: pointer;
+}
+
+.btn-danger{
+  background-color: #3425db !important;
+  color: #fff!important;
+  border-color: #3425db!important;
 }

@@ -6,7 +6,7 @@ const MovieForm = ({ match, history }) => {
       <h1>Movie Form - {match.params.id}</h1>
       <button
         onClick={() => history.replace("/movies")}
-        className="btn btn-outline-danger btn-sm"
+        className="btn btn-danger btn-sm"
         style={{ fontWeight: "bold" }}
       >
         Save

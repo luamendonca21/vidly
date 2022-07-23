@@ -5,9 +5,9 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ textAlign: "center", color: "#495057" }}>Login</h1>
-        <form style={{ marginTop: 30 }}>
-          <div className="form-group">
+        <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
+        <form className="col" style={{ marginTop: 30 }}>
+          <div className=" col form-group">
             <label
               htmlFor="username"
               style={{ fontWeight: "bold", color: "#495057" }}
@@ -22,7 +22,7 @@ class LoginForm extends Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="col form-group">
             <label
               htmlFor="password"
               style={{ fontWeight: "bold", color: "#495057" }}
@@ -35,6 +35,9 @@ class LoginForm extends Component {
               className="form-control"
               placeholder="Enter your password"
             />
+          </div>
+          <div className="col" style={{ marginTop: 30 }}>
+            <button className=" col-12 btn btn-danger btn-lg">Login</button>
           </div>
         </form>
       </div>
