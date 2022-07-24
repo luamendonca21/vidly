@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Input from "./input";
 import Joi from "joi-browser";
 import Form from "./common/form";
 class LoginForm extends Form {
@@ -27,20 +26,8 @@ class LoginForm extends Form {
             className="col"
             style={{ marginTop: 30 }}
           >
-            <Input
-              error={errors.username}
-              onChange={this.handleChange}
-              value={data.username}
-              label="Username"
-              name="username"
-            />
-            <Input
-              error={errors.password}
-              onChange={this.handleChange}
-              value={data.password}
-              label="Password"
-              name="password"
-            />
+            {this.renderInput("username", "Username")}
+            {this.renderInput("password", "Password")}
             <div
               className="col"
               style={{

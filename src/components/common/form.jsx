@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Input from "../input";
 import Joi from "joi-browser";
 class Form extends Component {
   state = { data: {}, errors: {} };
@@ -48,8 +48,21 @@ class Form extends Component {
         style={{ borderRadius: 30 }}
         className=" btn btn-danger btn-lg"
       >
-        {label}
+        Login
       </button>
+    );
+  }
+
+  renderInput(name, label) {
+    const { data, errors } = this.state;
+    return (
+      <Input
+        name={name}
+        error={errors[name]}
+        onChange={this.handleChange}
+        value={data[name]}
+        label={label}
+      />
     );
   }
 }
