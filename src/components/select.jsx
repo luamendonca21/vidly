@@ -14,7 +14,7 @@ const Select = ({ name, label, options, error, ...rest }) => {
         name={name}
         id={name}
         style={{ borderRadius: 20 }}
-        className=" form-control"
+        className="shadow-sm form-control"
       >
         <option>Select the genre</option>
         {options.map((option) => (

@@ -5,7 +5,7 @@ const Search = ({ value, onChange }) => {
     <input
       value={value}
       style={{ borderRadius: 20 }}
-      className="m-0 w-100 form-control"
+      className="shadow-sm m-0 w-100 form-control"
       type="search"
       placeholder="Search..."
       aria-label="Search"

@@ -9,7 +9,10 @@ class MoviesTable extends Component {
       label: "Ttile",
       content: (movie) => (
         <Link
-          style={{ fontWeight: "bold", color: "#7841f0" }}
+          style={{
+            fontWeight: "bold",
+            color: "#7841f0",
+          }}
           to={`movies/${movie._id}`}
         >
           {" "}

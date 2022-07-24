@@ -16,7 +16,7 @@ const Input = ({ name, label, error, ...rest }) => {
         style={{ borderRadius: 20 }}
         id={name}
         autoFocus={autoFocus}
-        className="form-control"
+        className=" shadow-sm form-control"
       />
       {error && (
         <div style={{ marginTop: 5 }} className="alert alert-danger">
