@@ -7,6 +7,7 @@ import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
 import { getGenres } from "../services/fakeGenreService";
 import MoviesTable from "./moviesTable";
+import Search from "./Search";
 import _ from "lodash";
 
 class Movies extends Component {
@@ -16,6 +17,8 @@ class Movies extends Component {
     currentPage: 1,
     genres: [],
     sortColumn: { path: "title", order: "asc" },
+    searchQuery: "",
+    selectedGenre: null,
   };
 
   componentDidMount() {
@@ -41,13 +44,16 @@ class Movies extends Component {
   };
 
   handleGenreSelect = (genre) => {
-    this.setState({ selectedGenre: genre, currentPage: 1 });
+    this.setState({ selectedGenre: genre, searchQuery: "", currentPage: 1 });
   };
 
   handleSort = (sortColumn) => {
     this.setState({ sortColumn });
   };
 
+  handleSearch = (query) => {
+    this.setState({ searchQuery: query, selectedGenre: null, currentPage: 1 });
+  };
   getPageData() {
     const {
       pageSize,
@@ -55,12 +61,19 @@ class Movies extends Component {
       movies: allMovies,
       selectedGenre,
       sortColumn,
+      searchQuery,
     } = this.state;
 
-    const filtered =
-      selectedGenre && selectedGenre._id
-        ? allMovies.filter((movie) => movie.genre._id === selectedGenre._id)
-        : allMovies;
+    let filtered = allMovies;
+
+    if (searchQuery)
+      filtered = allMovies.filter((m) =>
+        m.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+      );
+    else if (selectedGenre && selectedGenre._id)
+      filtered = allMovies.filter(
+        (movie) => movie.genre._id === selectedGenre._id
+      );
 
     const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
     const movies = paginate(sorted, currentPage, pageSize);
@@ -71,7 +84,7 @@ class Movies extends Component {
   render() {
     // refactoring
     const { length: count } = this.state.movies;
-    const { pageSize, currentPage, sortColumn } = this.state;
+    const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
 
     if (count === 0)
       return (
@@ -100,16 +113,6 @@ class Movies extends Component {
         </div>
 
         <div style={{ marginTop: 30, overflow: "hidden" }} className="col">
-          <p
-            style={{
-              color: "#495057",
-              textAlign: "center",
-              fontSize: 22,
-              fontWeight: 600,
-            }}
-          >
-            Showing {totalCount} movies in the database.
-          </p>
           <Link
             to="/movies/new"
             style={{
@@ -117,13 +120,24 @@ class Movies extends Component {
 
               borderRadius: 30,
               fontWeight: "bold",
-              marginBottom: 10,
               marginTop: 20,
+              marginBottom: 5,
             }}
             className="btn btn-danger btn-sm"
           >
             Add movie
           </Link>
+          <Search value={searchQuery} onChange={this.handleSearch} />
+          <p
+            style={{
+              marginTop: 20,
+              color: "#495057",
+              fontSize: 20,
+              fontWeight: 600,
+            }}
+          >
+            Showing {totalCount} movies in the database.
+          </p>
           <MoviesTable
             movies={movies}
             sortColumn={sortColumn}
