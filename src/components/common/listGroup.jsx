@@ -8,7 +8,7 @@ const ListGroup = ({
   selectedItem,
 }) => {
   return (
-    <ul className="list-group">
+    <ul className="shadow list-group">
       {items.map((item) => (
         <li
           key={item[valueProperty]}
