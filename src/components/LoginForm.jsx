@@ -16,7 +16,6 @@ class LoginForm extends Form {
     console.log("Submitted");
   };
   render() {
-    const { data, errors } = this.state;
     return (
       <div>
         <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
@@ -27,7 +26,7 @@ class LoginForm extends Form {
             style={{ marginTop: 30 }}
           >
             {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password")}
+            {this.renderInput("password", "Password", "password")}
             <div
               className="col"
               style={{

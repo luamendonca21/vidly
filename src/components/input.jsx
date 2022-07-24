@@ -1,7 +1,6 @@
 import React from "react";
 
-const Input = ({ name, label, value, error, onChange }) => {
-  let type = name == "username" ? "text" : "password";
+const Input = ({ type, name, label, value, error, onChange }) => {
   return (
     <div className=" col form-group">
       <label
