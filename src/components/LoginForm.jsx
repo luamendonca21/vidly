@@ -17,8 +17,7 @@ class LoginForm extends Form {
     console.log("Submitted");
   };
   render() {
-    const { username, password } = this.state.data;
-    const { errors } = this.state;
+    const { data, errors } = this.state;
     return (
       <div>
         <h2 style={{ textAlign: "center", color: "#495057" }}>Login</h2>
@@ -31,14 +30,14 @@ class LoginForm extends Form {
             <Input
               error={errors.username}
               onChange={this.handleChange}
-              value={username}
+              value={data.username}
               label="Username"
               name="username"
             />
             <Input
               error={errors.password}
               onChange={this.handleChange}
-              value={password}
+              value={data.password}
               label="Password"
               name="password"
             />
