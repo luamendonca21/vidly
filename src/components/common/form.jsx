@@ -26,6 +26,8 @@ class Form extends Component {
 
     const errors = this.validate();
     this.setState({ errors: errors || {} });
+    console.log(errors);
+
     if (errors) return;
 
     this.doSubmit();
@@ -48,7 +50,7 @@ class Form extends Component {
         style={{ borderRadius: 30 }}
         className=" btn btn-danger btn-lg"
       >
-        Login
+        {label}
       </button>
     );
   }
