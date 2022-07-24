@@ -27,7 +27,12 @@ class RegisterForm extends Form {
             style={{ marginTop: 30 }}
           >
             {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password", "password")}
+            {this.renderInput(
+              "password",
+              "Password",
+              "At least 5 characters",
+              "password"
+            )}
             {this.renderInput("name", "Name")}
             <div
               className="col"

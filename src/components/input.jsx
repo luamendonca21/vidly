@@ -15,7 +15,6 @@ const Input = ({ name, label, error, ...rest }) => {
         name={name}
         style={{ borderRadius: 20 }}
         id={name}
-        placeholder={`Enter the ${name}`}
         autoFocus={autoFocus}
         className="form-control"
       />

@@ -26,7 +26,7 @@ class LoginForm extends Form {
             style={{ marginTop: 30 }}
           >
             {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password", "password")}
+            {this.renderInput("password", "Password", "", "password")}
             <div
               className="col"
               style={{
