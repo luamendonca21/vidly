@@ -1,6 +1,8 @@
 import React from "react";
+import App from "./../App";
 
 const Input = ({ type, name, label, value, error, onChange }) => {
+  let autoFocus = name === "username" ? "autofocus" : "";
   return (
     <div className=" col form-group">
       <label
@@ -10,13 +12,13 @@ const Input = ({ type, name, label, value, error, onChange }) => {
         {label}
       </label>
       <input
-        style={{ borderRadius: 20 }}
-        name={name}
-        autoFocus
+        autoFocus={autoFocus}
         value={value}
         onChange={onChange}
-        id={name}
+        style={{ borderRadius: 20 }}
         type={type}
+        name={name}
+        id={name}
         className="form-control"
         placeholder={`Enter your ${name}`}
       />
