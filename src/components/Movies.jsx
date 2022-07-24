@@ -1,6 +1,7 @@
 import { toHaveFocus } from "@testing-library/jest-dom/dist/matchers";
 import React, { Component } from "react";
 import { getMovies, deleteMovie } from "../services/fakeMovieService";
+import { Link } from "react-router-dom";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
@@ -98,7 +99,7 @@ class Movies extends Component {
           />
         </div>
 
-        <div style={{ margin: 20, overflow: "hidden" }} className="col">
+        <div style={{ marginTop: 30, overflow: "hidden" }} className="col">
           <p
             style={{
               color: "#495057",
@@ -109,6 +110,20 @@ class Movies extends Component {
           >
             Showing {totalCount} movies in the database.
           </p>
+          <Link
+            style={{
+              padding: "0.5rem 1.5em",
+
+              borderRadius: 30,
+              fontWeight: "bold",
+              marginBottom: 5,
+              marginTop: 20,
+            }}
+            className="btn btn-danger btn-sm"
+            to="/movies/new"
+          >
+            Add movie
+          </Link>
           <MoviesTable
             movies={movies}
             sortColumn={sortColumn}
