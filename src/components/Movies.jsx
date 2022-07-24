@@ -111,6 +111,7 @@ class Movies extends Component {
             Showing {totalCount} movies in the database.
           </p>
           <Link
+            to="/movies/new"
             style={{
               padding: "0.5rem 1.5em",
 
@@ -120,7 +121,6 @@ class Movies extends Component {
               marginTop: 20,
             }}
             className="btn btn-danger btn-sm"
-            to="/movies/new"
           >
             Add movie
           </Link>

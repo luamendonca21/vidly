@@ -1,8 +1,6 @@
 import React from "react";
-import App from "./../App";
 
-const Input = ({ name, label, error, ...rest }) => {
-  let autoFocus = name === "username" || name === "title" ? "autofocus" : "";
+const Select = ({ name, label, options, error, ...rest }) => {
   return (
     <div className=" col form-group">
       <label
@@ -11,15 +9,20 @@ const Input = ({ name, label, error, ...rest }) => {
       >
         {label}
       </label>
-      <input
+      <select
         {...rest}
         name={name}
-        style={{ borderRadius: 20 }}
         id={name}
-        placeholder={`Enter the ${name}`}
-        autoFocus={autoFocus}
-        className="form-control"
-      />
+        style={{ borderRadius: 20 }}
+        className=" form-control"
+      >
+        <option>Select the genre</option>
+        {options.map((option) => (
+          <option key={option._id} value={option._id}>
+            {option.name}
+          </option>
+        ))}
+      </select>
       {error && (
         <div style={{ marginTop: 5 }} className="alert alert-danger">
           {error}
@@ -29,4 +32,4 @@ const Input = ({ name, label, error, ...rest }) => {
   );
 };
 
-export default Input;
+export default Select;
