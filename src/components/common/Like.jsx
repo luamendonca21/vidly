@@ -1,6 +1,4 @@
 import React from "react";
-// Input: liked: boolean
-// Output: onClick
 
 const Like = ({ onClick, liked }) => {
   let classes = "clickable fa fa-heart";

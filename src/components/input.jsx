@@ -1,5 +1,4 @@
 import React from "react";
-import App from "./../App";
 
 const Input = ({ name, label, error, ...rest }) => {
   let autoFocus = name === "username" || name === "title" ? "autofocus" : "";

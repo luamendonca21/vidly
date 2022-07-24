@@ -117,7 +117,7 @@ class Movies extends Component {
 
               borderRadius: 30,
               fontWeight: "bold",
-              marginBottom: 5,
+              marginBottom: 10,
               marginTop: 20,
             }}
             className="btn btn-danger btn-sm"
