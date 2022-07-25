@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 import Form from "./common/form";
+import AnimatedPage from "./AnimatedPage";
 class RegisterForm extends Form {
   state = {
     data: { username: "", password: "", name: "" },
@@ -18,35 +19,37 @@ class RegisterForm extends Form {
   };
   render() {
     return (
-      <div>
-        <h2 style={{ textAlign: "center", color: "#495057" }}>Register</h2>
+      <AnimatedPage>
         <div>
-          <form
-            onSubmit={this.handleSubmit}
-            className="col"
-            style={{ marginTop: 30 }}
-          >
-            {this.renderInput("username", "Username")}
-            {this.renderInput(
-              "password",
-              "Password",
-              "At least 5 characters",
-              "password"
-            )}
-            {this.renderInput("name", "Name")}
-            <div
+          <h2 style={{ textAlign: "center", color: "#495057" }}>Register</h2>
+          <div>
+            <form
+              onSubmit={this.handleSubmit}
               className="col"
-              style={{
-                marginTop: 40,
-                display: "flex",
-                justifyContent: "center",
-              }}
+              style={{ marginTop: 30 }}
             >
-              {this.renderButton("Register")}
-            </div>
-          </form>
+              {this.renderInput("username", "Username")}
+              {this.renderInput(
+                "password",
+                "Password",
+                "At least 5 characters",
+                "password"
+              )}
+              {this.renderInput("name", "Name")}
+              <div
+                className="col"
+                style={{
+                  marginTop: 40,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                {this.renderButton("Register")}
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </AnimatedPage>
     );
   }
 }

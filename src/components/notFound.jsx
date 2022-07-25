@@ -1,7 +1,12 @@
 import React from "react";
+import AnimatedPage from "./AnimatedPage";
 
 const NotFound = () => {
-  return <h2 style={{ color: "#495057" }}>Not Found</h2>;
+  return (
+    <AnimatedPage>
+      <h2 style={{ color: "#495057" }}>Not Found</h2>
+    </AnimatedPage>
+  );
 };
 
 export default NotFound;

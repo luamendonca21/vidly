@@ -9,6 +9,7 @@ import { getGenres } from "../services/fakeGenreService";
 import MoviesTable from "./moviesTable";
 import Search from "./Search";
 import _ from "lodash";
+import AnimatedPage from "./AnimatedPage";
 
 class Movies extends Component {
   state = {
@@ -88,71 +89,75 @@ class Movies extends Component {
 
     if (count === 0)
       return (
-        <p
-          style={{
-            color: "#495057",
-            textAlign: "center",
-            fontSize: 22,
-            fontWeight: 600,
-          }}
-        >
-          {" "}
-          There are no movies in the database.{" "}
-        </p>
-      );
-    const { totalCount, data: movies } = this.getPageData();
-    return (
-      <div className="row align-items-center">
-        <div className="col-12">
-          <ListGroup
-            selectedItem={this.state.selectedGenre}
-            items={this.state.genres}
-            onItemSelect={this.handleGenreSelect}
-            itemsCount={totalCount}
-          />
-        </div>
-
-        <div style={{ marginTop: 30, overflow: "hidden" }} className="col">
-          <Link
-            to="/movies/new"
-            style={{
-              padding: "0.5rem 1.5em",
-
-              borderRadius: 30,
-              fontWeight: "bold",
-              marginTop: 20,
-              marginBottom: 5,
-            }}
-            className="btn btn-danger btn-sm"
-          >
-            Add movie
-          </Link>
-          <Search value={searchQuery} onChange={this.handleSearch} />
+        <AnimatedPage>
           <p
             style={{
-              marginTop: 20,
               color: "#495057",
-              fontSize: 20,
+              textAlign: "center",
+              fontSize: 22,
               fontWeight: 600,
             }}
           >
-            Showing {totalCount} movies in the database.
+            {" "}
+            There are no movies in the database.{" "}
           </p>
-          <MoviesTable
-            movies={movies}
-            sortColumn={sortColumn}
-            onDelete={this.handleDelete}
-            onLike={this.handleLike}
-            onSort={this.handleSort}
-          />
-          <Pagination
-            itemsCount={totalCount}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={this.handlePageChange}
-          />
+        </AnimatedPage>
+      );
+    const { totalCount, data: movies } = this.getPageData();
+    return (
+      <AnimatedPage>
+        <div className="row align-items-center">
+          <div className="col-12">
+            <ListGroup
+              selectedItem={this.state.selectedGenre}
+              items={this.state.genres}
+              onItemSelect={this.handleGenreSelect}
+              itemsCount={totalCount}
+            />
+          </div>
+
+          <div style={{ marginTop: 30, overflow: "hidden" }} className="col">
+            <Link
+              to="/movies/new"
+              style={{
+                padding: "0.5rem 1.5em",
+
+                borderRadius: 30,
+                fontWeight: "bold",
+                marginTop: 20,
+                marginBottom: 5,
+              }}
+              className="btn btn-danger btn-sm"
+            >
+              Add movie
+            </Link>
+            <Search value={searchQuery} onChange={this.handleSearch} />
+            <p
+              style={{
+                marginTop: 20,
+                color: "#495057",
+                fontSize: 20,
+                fontWeight: 600,
+              }}
+            >
+              Showing {totalCount} movies in the database.
+            </p>
+            <MoviesTable
+              movies={movies}
+              sortColumn={sortColumn}
+              onDelete={this.handleDelete}
+              onLike={this.handleLike}
+              onSort={this.handleSort}
+            />
+            <Pagination
+              itemsCount={totalCount}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={this.handlePageChange}
+            />
+          </div>
         </div>
-      </div>
+      </AnimatedPage>
     );
   }
 }

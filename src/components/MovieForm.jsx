@@ -1,7 +1,9 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "./common/form";
+import AnimatedPage from "./AnimatedPage";
 import { getGenres } from "../services/fakeGenreService";
+
 import { getMovie, saveMovie } from "../services/fakeMovieService";
 
 class MovieForm extends Form {
@@ -63,36 +65,38 @@ class MovieForm extends Form {
   };
   render() {
     return (
-      <div>
-        <h2 style={{ textAlign: "center", color: "#495057" }}>Movie Form</h2>
+      <AnimatedPage>
         <div>
-          <form
-            onSubmit={this.handleSubmit}
-            className="col"
-            style={{ marginTop: 30 }}
-          >
-            {this.renderInput("title", "Title")}
-            {this.renderSelect("genreId", "Genre", this.state.genres)}
-            {this.renderInput(
-              "numberInStock",
-              "Number in Stock",
-              "Must be a number"
-            )}
-
-            {this.renderInput("dailyRentalRate", "Rate", "Must be a number")}
-            <div
+          <h2 style={{ textAlign: "center", color: "#495057" }}>Movie Form</h2>
+          <div>
+            <form
+              onSubmit={this.handleSubmit}
               className="col"
-              style={{
-                marginTop: 40,
-                display: "flex",
-                justifyContent: "center",
-              }}
+              style={{ marginTop: 30 }}
             >
-              {this.renderButton("Save")}
-            </div>
-          </form>
+              {this.renderInput("title", "Title")}
+              {this.renderSelect("genreId", "Genre", this.state.genres)}
+              {this.renderInput(
+                "numberInStock",
+                "Number in Stock",
+                "Must be a number"
+              )}
+
+              {this.renderInput("dailyRentalRate", "Rate", "Must be a number")}
+              <div
+                className="col"
+                style={{
+                  marginTop: 40,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                {this.renderButton("Save")}
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </AnimatedPage>
     );
   }
 }
