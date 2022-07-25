@@ -6,7 +6,7 @@ class MoviesTable extends Component {
   columns = [
     {
       path: "title",
-      label: "Ttile",
+      label: "Title",
       content: (movie) => (
         <Link
           style={{
