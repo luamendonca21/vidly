@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "./common/form";
-import AnimatedPage from "./AnimatedPage";
+import AnimatedPage from "./animations/AnimatedPage";
 import { getGenres } from "../services/fakeGenreService";
 
 import { getMovie, saveMovie } from "../services/fakeMovieService";

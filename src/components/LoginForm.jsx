@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 import Form from "./common/form";
-import AnimatedPage from "./AnimatedPage";
+import AnimatedPage from "./animations/AnimatedPage";
 class LoginForm extends Form {
   state = {
     data: { username: "", password: "" },

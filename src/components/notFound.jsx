@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedPage from "./AnimatedPage";
+import AnimatedPage from "./animations/AnimatedPage";
 
 const NotFound = () => {
   return (

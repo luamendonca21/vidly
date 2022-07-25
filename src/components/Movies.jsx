@@ -9,7 +9,7 @@ import { getGenres } from "../services/fakeGenreService";
 import MoviesTable from "./moviesTable";
 import Search from "./Search";
 import _ from "lodash";
-import AnimatedPage from "./AnimatedPage";
+import AnimatedPage from "./animations/AnimatedPage";
 
 class Movies extends Component {
   state = {
